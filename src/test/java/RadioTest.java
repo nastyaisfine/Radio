@@ -80,4 +80,37 @@ public class RadioTest {
         int expected = 0;
         int actual = radio.getCurrentVolume();
     }
+
+        @Test
+        public void TooMuchStationTest() {
+            Radio radio = new Radio();
+            radio.setCurrentStation(10);
+            radio.next();
+            int expected = 9;
+            int actual = radio.getCurrentStation();
+    }
+    @Test
+    public void TooSmallStationTest() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(-1);
+        radio.next();
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+    }
+    @Test
+    public void TooMuchIncreaseVolumeTest() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(11);
+        radio.increaseVolume();
+        int expected = 10;
+        int actual = radio.getCurrentVolume();
+    }
+    @Test
+    public void TooSmallDecreaseVolumeTest() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
+        radio.increaseVolume();
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+    }
 }
