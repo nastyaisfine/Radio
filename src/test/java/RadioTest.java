@@ -5,15 +5,15 @@ public class RadioTest {
 
     @Test
     public void test(){
-        Radio radio = new Radio(0,10);
+        Radio radio = new Radio(10);
         Assertions.assertEquals(0, radio.getMinStation());
-        Assertions.assertEquals(10, radio.getMaxStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
     }
 
 
     @Test
     public void NextStationTest() {
-        Radio radio = new Radio(0,10);
+        Radio radio = new Radio(10);
         radio.setCurrentStation(5);
         radio.next();
         int expected = 6;
@@ -24,7 +24,7 @@ public class RadioTest {
 
     @Test
     public void PrevStationTest() {
-        Radio radio = new Radio(0,10);
+        Radio radio = new Radio();
         radio.setCurrentStation(5);
         radio.prev();
         int expected = 4;
@@ -36,7 +36,7 @@ public class RadioTest {
 
     @Test
     public void NextAfter9StationTest() {
-        Radio radio = new Radio(0,10);
+        Radio radio = new Radio();
         radio.setCurrentStation(9);
         radio.next();
         int expected = 0;
@@ -46,7 +46,7 @@ public class RadioTest {
 
     @Test
     public void PrevLess0StationTest() {
-        Radio radio = new Radio(0,10);
+        Radio radio = new Radio();
         radio.setCurrentStation(0);
         radio.prev();
         int expected = 9;
@@ -55,7 +55,7 @@ public class RadioTest {
 
     @Test
     public void IncreaseVolumeTest() {
-        Radio radio = new Radio(7);
+        Radio radio = new Radio();
         radio.setCurrentVolume(7);
         radio.increaseVolume();
         int expected = 6;
