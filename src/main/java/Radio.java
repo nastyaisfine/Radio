@@ -17,7 +17,7 @@ public class Radio {
 
     }
 
-    public int Radio(int stationsCount) {
+    public Radio(int stationsCount) {
         {
             maxStation = stationsCount - 1;
         }
@@ -26,27 +26,27 @@ public class Radio {
             return currentStation;
         }
 
-public int getMaxStation() {
-        return maxStation;
-    }
+        public int getMaxStation () {
+            return maxStation;
+        }
 
-    public int getMinStation() {
-        return minStation;
-    }
+        public int getMinStation () {
+            return minStation;
+        }
 
-    public int getMaxVolume() {
-        return maxVolume;
-    }
+        public int getMaxVolume () {
+            return maxVolume;
+        }
 
-    public int getMinVolume() {
-        return minVolume;
-    }
+        public int getMinVolume () {
+            return minVolume;
+        }
 
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+        public int getCurrentVolume () {
+            return currentVolume;
+        }
 
-        public void setCurrentVolume(int currentVolume) {
+        public void setCurrentVolume ( int currentVolume){
             if (currentVolume > maxVolume) {
                 return;
             }
@@ -56,7 +56,7 @@ public int getMaxStation() {
             this.currentVolume = currentVolume;
         }
 
-        public void setCurrentStation(int currentStation) {
+        public void setCurrentStation ( int currentStation){
             if (currentStation > maxStation - 1) {
                 return;
             }
@@ -66,7 +66,7 @@ public int getMaxStation() {
             this.currentStation = currentStation;
         }
 
-        public void next() {
+        public void next () {
             if (currentStation < maxStation) {
                 currentStation++;
             } else {
@@ -74,7 +74,7 @@ public int getMaxStation() {
             }
         }
 
-        public void prev() {
+        public void prev () {
             if (currentStation > minStation) {
                 currentStation--;
             } else {
@@ -82,7 +82,7 @@ public int getMaxStation() {
             }
         }
 
-        public void increaseVolume() {
+        public void increaseVolume () {
             if (currentVolume < maxVolume) {
                 currentVolume++;
             } else {
@@ -91,7 +91,7 @@ public int getMaxStation() {
 
         }
 
-        public void decreaseVolume() {
+        public void decreaseVolume () {
             if (currentVolume > minVolume) {
                 currentVolume--;
             } else {
