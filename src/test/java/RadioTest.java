@@ -24,7 +24,7 @@ public class RadioTest {
 
     @Test
     public void PrevStationTest() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setCurrentStation(5);
         radio.prev();
         int expected = 4;
@@ -36,7 +36,7 @@ public class RadioTest {
 
     @Test
     public void NextAfter9StationTest() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setCurrentStation(9);
         radio.next();
         int expected = 0;
@@ -46,7 +46,7 @@ public class RadioTest {
 
     @Test
     public void PrevLess0StationTest() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setCurrentStation(0);
         radio.prev();
         int expected = 9;
@@ -55,7 +55,7 @@ public class RadioTest {
 
     @Test
     public void IncreaseVolumeTest() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
         radio.setCurrentVolume(7);
         radio.increaseVolume();
         int expected = 6;
@@ -64,7 +64,7 @@ public class RadioTest {
     }
     @Test
     public void IncreaseAfterMaxVolumeTest() {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio(10);
         radio.setCurrentVolume(100);
         radio.increaseVolume();
         int expected = 100;
@@ -73,7 +73,7 @@ public class RadioTest {
 
     @Test
     public void DecreaseVolumeTest() {
-        Radio radio = new Radio(6);
+        Radio radio = new Radio(10);
         radio.setCurrentVolume(6);
         radio.decreaseVolume();
         int expected = 5;
@@ -82,7 +82,7 @@ public class RadioTest {
 
     @Test
     public void DecreaseLess0VolumeTest() {
-        Radio radio = new Radio(0);
+        Radio radio = new Radio(10);
         radio.setCurrentVolume(0);
         radio.decreaseVolume();
         int expected = 0;
@@ -91,7 +91,7 @@ public class RadioTest {
 
         @Test
         public void TooMuchStationTest() {
-            Radio radio = new Radio(0,10);
+            Radio radio = new Radio(10);
             radio.setCurrentStation(10);
             radio.next();
             int expected = 0;
@@ -99,7 +99,7 @@ public class RadioTest {
     }
     @Test
     public void TooSmallStationTest() {
-        Radio radio = new Radio(0,10);
+        Radio radio = new Radio(10);
         radio.setCurrentStation(-1);
         radio.next();
         int expected = 9;
@@ -107,7 +107,7 @@ public class RadioTest {
     }
     @Test
     public void TooMuchIncreaseVolumeTest() {
-        Radio radio = new Radio(111);
+        Radio radio = new Radio(10);
         radio.setCurrentVolume(111);
         radio.increaseVolume();
         int expected = 100;
@@ -115,7 +115,7 @@ public class RadioTest {
     }
     @Test
     public void TooSmallDecreaseVolumeTest() {
-        Radio radio = new Radio(-1);
+        Radio radio = new Radio(10);
         radio.setCurrentVolume(-1);
         radio.increaseVolume();
         int expected = 0;
