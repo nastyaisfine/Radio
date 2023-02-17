@@ -9,6 +9,7 @@ public class Radio {
     private int minVolume = 0;
     private int currentVolume = minVolume;
 
+    // конструкторы //
 
     public Radio(int minStation, int maxStation) {
         this.minStation = minStation;
