@@ -55,7 +55,7 @@ public class RadioTest {
 
     @Test
     public void IncreaseVolumeTest() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentVolume(7);
         radio.increaseVolume();
         int expected = 6;
@@ -64,7 +64,7 @@ public class RadioTest {
     }
     @Test
     public void IncreaseAfterMaxVolumeTest() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentVolume(100);
         radio.increaseVolume();
         int expected = 100;
@@ -73,7 +73,7 @@ public class RadioTest {
 
     @Test
     public void DecreaseVolumeTest() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentVolume(6);
         radio.decreaseVolume();
         int expected = 5;
@@ -82,7 +82,7 @@ public class RadioTest {
 
     @Test
     public void DecreaseLess0VolumeTest() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentVolume(0);
         radio.decreaseVolume();
         int expected = 0;
@@ -107,7 +107,7 @@ public class RadioTest {
     }
     @Test
     public void TooMuchIncreaseVolumeTest() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentVolume(111);
         radio.increaseVolume();
         int expected = 100;
@@ -115,7 +115,7 @@ public class RadioTest {
     }
     @Test
     public void TooSmallDecreaseVolumeTest() {
-        Radio radio = new Radio(10);
+        Radio radio = new Radio();
         radio.setCurrentVolume(-1);
         radio.increaseVolume();
         int expected = 0;
