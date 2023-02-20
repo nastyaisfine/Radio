@@ -9,14 +9,9 @@ public class Radio {
     private int minVolume = 0;
     private int currentVolume = minVolume;
 
+    // конструкторы //
 
-    public Radio(int minStation, int maxStation) {
-        this.minStation = minStation;
-        this.maxStation = maxStation;
-        this.currentStation = minStation;
-        this.minVolume = 0;
-        this.maxVolume = 100;
-
+    public Radio() {
     }
 
     public Radio(int stationsCount) {
